@@ -20,7 +20,7 @@ class Shop:
         else:
             print('Такого товара не существует!')
 
-    def buy(self, item_name, amount=0):
+    def buy(self, item_name, amount=1):
         '''закупка товаров'''
         for product in self.stock:
             if item_name == product.name:
