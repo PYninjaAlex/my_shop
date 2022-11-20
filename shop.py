@@ -27,8 +27,12 @@ class Shop:
         '''закупка товаров'''
         for product in self.stock:
             if item_name == product.name:
-                product.increase_amount(amount)
-                break
+                try:
+                    product.increase_amount(amount)
+                    break
+                except ValueError:
+                    print('Не удалось добавить товар!')
+                    break
         else:
             item_name = item.Item(item_name, amount)
             self.stock.append(item_name)

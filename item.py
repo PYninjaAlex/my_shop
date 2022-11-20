@@ -3,6 +3,8 @@ class Item:
     def __init__(self, name, amount=1, rarity='Usual'):
         self.name = name
         self.amount = amount
+        if amount < 0:
+            raise ValueError('Количество товара не может быть отрицательным!')
         self.rarity = rarity
 
     def decrease_amount(self, value=1):
