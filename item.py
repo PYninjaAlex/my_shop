@@ -14,7 +14,10 @@ class Item:
 
     def increase_amount(self, value=1):
         '''добавление товаров в магазин'''
-        self.amount += value
+        if value >= 0:
+              self.amount += value
+        else:
+            raise ValueError('Значение не может быть отрицательным!')
 
 
 
