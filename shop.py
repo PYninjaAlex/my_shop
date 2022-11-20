@@ -1,3 +1,4 @@
+import copy
 import item
 
 
@@ -14,10 +15,16 @@ class Shop:
                 output += f'{str(item.name)}: {str(item.amount)};\n'
         return output
 
-    def sell(self, item_name, amount=1):
+    def sum_of_items(self, state):
+        self.sum_of_goods = 0
+        for items in self.stock:
+            self.sum_of_goods += items.money
+        return f'Cумма всех товаров {state}:{self.sum_of_goods};\n'
+
+    def sell(self, item, amount=1):
         '''распродажа'''
         for good in self.stock:
-            if item_name == good.name:
+            if item == good.name:
                 good.decrease_amount(amount)
                 break
         else:
@@ -34,5 +41,6 @@ class Shop:
                     print('Не удалось добавить товар!')
                     break
         else:
-            item_name = item.Item(item_name, amount)
-            self.stock.append(item_name)
+            item_copy = copy.deepcopy(item.Item(item_name))
+            item_copy.set_amount(amount)
+            self.stock.append(item_copy)
