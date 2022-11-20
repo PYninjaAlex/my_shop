@@ -13,7 +13,7 @@ def main():
     shop.sell('logitech', 4)
     print(shop.list_items('стало'))
     print(shop.list_items('перед закупкой'))
-    shop.buy('asus', 3)
+    shop.buy('ffdf', 3)
     print(shop.list_items('после закупки'))
 
 if __name__ == '__main__':

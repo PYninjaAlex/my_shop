@@ -1,3 +1,6 @@
+import item
+
+
 class Shop:
     '''главный магазин'''
     def __init__(self, *items):
@@ -27,4 +30,5 @@ class Shop:
                 product.increase_amount(amount)
                 break
         else:
-            print('Такого товара не существует!')
+            item_name = item.Item(item_name, amount)
+            self.stock.append(item_name)
