@@ -25,6 +25,7 @@ class Item:
             raise ValueError('Значение не может быть отрицательным!')
 
     def set_amount(self, amount):
+        '''проверка параметра amount'''
         if amount >= 0:
               self.amount = amount
         else:

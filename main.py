@@ -1,3 +1,4 @@
+#TODO сделать цикл и список и запрос толваров
 from item import Item
 from shop import Shop
 

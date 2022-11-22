@@ -16,6 +16,7 @@ class Shop:
         return output
 
     def sum_of_items(self, state):
+        '''сумма всех товаров'''
         self.sum_of_goods = 0
         for items in self.stock:
             self.sum_of_goods += items.money
